@@ -24,7 +24,7 @@ public class DequeueController {
             return queryService.dequeue().getValue();
         }
         else{
-            throw new ValidationException("Queue is empty");
+            throw new ValidationException("ERROR: Queue is empty");
         }
 
     }
