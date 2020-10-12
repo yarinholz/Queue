@@ -1,16 +1,12 @@
 package com.Yarin.Queue.Controllers;
-
-import com.Yarin.Queue.Dao.Item;
 import com.Yarin.Queue.Dao.QueueStats;
 import com.Yarin.Queue.Services.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.support.BeanDefinitionValidationException;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.xml.bind.ValidationException;
 
