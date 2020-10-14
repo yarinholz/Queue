@@ -1,5 +1,5 @@
 package com.Yarin.Queue.Controllers;
-import com.Yarin.Queue.Dao.QueueStats;
+import com.Yarin.Queue.Dao.QueueState;
 import com.Yarin.Queue.Services.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -17,7 +17,7 @@ public class DequeueController {
 
     @GetMapping("/dequeue")
     String dequeue() throws ValidationException {
-        QueueStats stats = QueueStats.getInstance();
+        QueueState stats = QueueState.getInstance();
         if (stats.getSize() > 0) {
             QueryService queryService = new QueryService(mongoTemplate);
             stats.decreaseSize();

@@ -1,7 +1,7 @@
 package com.Yarin.Queue.Controllers;
 
 import com.Yarin.Queue.Dao.Item;
-import com.Yarin.Queue.Dao.QueueStats;
+import com.Yarin.Queue.Dao.QueueState;
 import com.Yarin.Queue.Services.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -16,7 +16,7 @@ public  class EnqueueController {
     @PostMapping(value = "/enqueue", consumes = "application/json", produces = "application/json")
     Item enqueue(@RequestBody String s){
         QueryService queryService = new QueryService(mongoTemplate);
-        QueueStats stats = QueueStats.getInstance();
+        QueueState stats = QueueState.getInstance();
         int id = stats.getNextId();
         Item item = new Item(id,s);
         queryService.insertItem(item);

@@ -1,20 +1,20 @@
 package com.Yarin.Queue.Dao;
 
-public class QueueStats {
-    private static QueueStats instance = null;
+public class QueueState {
+    private static QueueState instance = null;
     private long size;
     private int nextId=0;
 
-    private QueueStats(){
+    private QueueState(){
     }
 
-    public static QueueStats getInstance(){
+    public static QueueState getInstance(){
         if(instance==null){
-            instance = new QueueStats();
+            instance = new QueueState();
         }
         return instance;
     }
-    public void setNextId(int nextId){
+    public void setNextId(int nextId) {
         this.nextId=nextId;
     }
 
@@ -22,7 +22,6 @@ public class QueueStats {
     public int getNextId() {
         return nextId;
     }
-
 
     public long getSize() {
         return size;
@@ -35,6 +34,7 @@ public class QueueStats {
     public void increaseId(){
         this.nextId++;
     }
+
     public void increaseSize(){
         this.size++;
     }

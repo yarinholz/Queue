@@ -1,7 +1,7 @@
 package com.Yarin.Queue;
 
 import com.Yarin.Queue.Dao.Item;
-import com.Yarin.Queue.Dao.QueueStats;
+import com.Yarin.Queue.Dao.QueueState;
 import com.Yarin.Queue.Services.QueryService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -19,7 +19,7 @@ public class QueueRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-       QueueStats stats = QueueStats.getInstance();
+        QueueState stats = QueueState.getInstance();
         long size=queryService.getSize();
         stats.setSize(size);
         if(size==0){
